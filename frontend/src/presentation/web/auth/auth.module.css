@@ -1,0 +1,54 @@
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    padding: 1vw;
+    width: auto;
+    height: auto;
+    border: 0.5px solid;
+    border-radius: 30px;
+    border-color: #909090;
+}
+
+form {
+    padding-top: 1vh;
+}
+
+h4 {
+    margin: auto;
+    text-align: center;
+}
+
+.textField {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+
+button {
+    color: white;
+    background-color: var(--accent);
+    border: none;
+    height: 3vh;
+    border-radius: var(--rounded-full);
+    margin-top: 2vh
+}
+
+.textInput {
+    border: 2px solid;
+    border-color: var(--accent);
+    background-color: var(--second-surface);
+}
+
+.errorMessage {
+    color: #c0392b;
+    text-align: center;
+    margin: 0.5rem 0;
+}

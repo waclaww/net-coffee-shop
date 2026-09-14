@@ -1,0 +1,59 @@
+.navbar {
+    position: relative;
+    display: flex;
+    flex: 1;
+    background-color: var( --surface ); 
+    border: 1px;
+    border-radius: var( --rounded-full);
+    height: 6.5vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.sections {
+    position: relative;
+    display: flex;
+    flex: 1;
+    border-radius: var( --rounded-full);
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.element {
+    position: relative;
+    display: flex;
+    margin-left: 5vw;
+    padding-right: 5vw;
+    white-space: nowrap;
+}
+
+.search {
+    flex: 1;
+}
+
+input {
+    flex: 1;
+    position: relative;
+    width: 25vw;
+    height: 3vh;
+    border-radius: var( --rounded-full );
+    padding-left: 10px;
+}
+
+input:focus {
+    border-color: #623d06;
+    outline: none;
+}
+
+.tools {
+    position: relative;
+    display: flex;
+    flex: 1;
+    margin-left: 18vw;
+    gap: 2vw;
+    
+}
