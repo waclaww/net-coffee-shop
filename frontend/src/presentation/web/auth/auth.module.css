@@ -1,12 +1,15 @@
-html, body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.centeredLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .container {
     display: flex;
+    align-self: center;
+    justify-self: center;
     flex-direction: column;
     background-color: var(--surface);
     padding: 1vw;
@@ -21,7 +24,7 @@ form {
     padding-top: 1vh;
 }
 
-h4 {
+h3 {
     margin: auto;
     text-align: center;
 }
@@ -29,22 +32,53 @@ h4 {
 .textField {
     display: flex;
     flex-direction: column;
-    margin-top: 1vh;
+    margin-top: 2vh;
 }
 
 button {
     color: white;
     background-color: var(--accent);
     border: none;
-    height: 3vh;
+    height: 4vh;
     border-radius: var(--rounded-full);
-    margin-top: 2vh
+    margin-top: 3vh;
+    width: auto;
+    font-size: medium;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+}
+
+button:active {
+    transform: scale(0.99) translateY(0.5px);
 }
 
 .textInput {
     border: 2px solid;
     border-color: var(--accent);
+    border-radius: var( --rounded-full );
     background-color: var(--second-surface);
+    padding: 0.75vh 15px;
+    margin-top: 0.5vh;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease;
+}
+.textInput:focus {
+    border-color: var( --accent-hover );
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--accent-hover);
 }
 
 .errorMessage {

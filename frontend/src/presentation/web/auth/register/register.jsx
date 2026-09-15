@@ -39,41 +39,44 @@ export function Register() {
     }
 
     return (
-        <MainScreen>
-            <div className={styles.container}>
-                <form onSubmit={handleSubmit}>
-                    <h4>Регистрация</h4>
-
-                    {error && <div className={styles.errorMessage}>{error}</div>}
-
-                    <div className={styles.textField}>
-                        <label className={styles.textLabel}>Логин</label>
-                        <input
-                         className={styles.textInput}
-                         type='text'
-                         value={username}
-                         onChange={(e) => setUsername(e.target.value)}
-                         required
-                         disabled={isSubmiting}
-
-                        ></input>
+            <MainScreen>
+                <div className={styles.centeredLayout}>
+                    <div className={styles.container}>
+                        <form onSubmit={handleSubmit}>
+                            <h3>Регистрация в магазине</h3>
+        
+                            {error && <div className={styles.errorMessage}>{error}</div>}
+        
+                            <div className={styles.textField}>
+                                <label className={styles.textLabel}>Придумайте логин</label>
+                                <input
+                                className={styles.textInput}
+                                type='text'
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                                disabled={isSubmiting}
+        
+                                ></input>
+                            </div>
+                            <div className={styles.textField}>
+                                <label className={styles.textLabel}>Придумайте пароль</label>
+                                <input className={styles.textInput}
+                                type='password'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                                disabled={isSubmiting}
+                                ></input>
+                            <button
+                                type="submit"
+                                disabled={isSubmiting}
+                            >{isSubmiting ? 'Регистрация' : 'Зарегестрироваться'}</button>
+                            <p>Есть аккаунт? <a href='/login'>Войдите!</a></p>
+                        </div>
+                        </form>
                     </div>
-                    <div className={styles.textField}>
-                        <label className={styles.textLabel}>Пароль</label>
-                        <input className={styles.textInput}
-                         type='password'
-                         value={password}
-                         onChange={(e) => setPassword(e.target.value)}
-                         required
-                         disabled={isSubmiting}
-                        ></input>
-                    </div>
-                    <button
-                        type="submit"
-                        disabled={isSubmiting}
-                    >{isSubmiting ? 'Регистрация...' : 'Зарегистрироваться'}</button>
-                </form>
-            </div>
-        </MainScreen>
-    )
+                </div>
+            </MainScreen>
+        )
 }

@@ -40,39 +40,42 @@ export function Login() {
 
     return (
         <MainScreen>
-            <div className={styles.container}>
-                <form onSubmit={handleSubmit}>
-                    <h4>Логин</h4>
+            <div className={styles.centeredLayout}>
+                <div className={styles.container}>
+                    <form onSubmit={handleSubmit}>
+                        <h3>Вход в аккаунт</h3>
 
-                    {error && <div className={styles.errorMessage}>{error}</div>}
+                        {error && <div className={styles.errorMessage}>{error}</div>}
 
-                    <div className={styles.textField}>
-                        <label className={styles.textLabel}>Логин</label>
-                        <input
-                         className={styles.textInput}
-                         type='text'
-                         value={username}
-                         onChange={(e) => setUsername(e.target.value)}
-                         required
-                         disabled={isSubmiting}
+                        <div className={styles.textField}>
+                            <label className={styles.textLabel}>Логин</label>
+                            <input
+                            className={styles.textInput}
+                            type='text'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                            disabled={isSubmiting}
 
-                        ></input>
-                    </div>
-                    <div className={styles.textField}>
-                        <label className={styles.textLabel}>Пароль</label>
-                        <input className={styles.textInput}
-                         type='password'
-                         value={password}
-                         onChange={(e) => setPassword(e.target.value)}
-                         required
-                         disabled={isSubmiting}
-                        ></input>
+                            ></input>
+                        </div>
+                        <div className={styles.textField}>
+                            <label className={styles.textLabel}>Пароль</label>
+                            <input className={styles.textInput}
+                            type='password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            disabled={isSubmiting}
+                            ></input>
                         <button
                             type="submit"
                             disabled={isSubmiting}
                         >{isSubmiting ? 'Вход' : 'Войти'}</button>
+                        <p>Нет акканта? <a href='/register'>Зарегестрируйтесь!</a></p>
                     </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </MainScreen>
     )

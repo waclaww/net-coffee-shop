@@ -1,19 +1,33 @@
+@font-face {
+  font-family: 'Logo';
+  src: url('./assets/fonts/LogoFont/font.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --bg-color: #e2e1e1;
   --text-color: #000000;
   --surface: #ffffff;
   --second-surface: #ffffff;
   --rounded-full: 999px;
-  --accent: #573700
+  --accent: #6F4E37;
+  --accent-hover: #bc540aeb;
 }
+
+
 p {
   color: var(--text-color);
 }
 
-body {
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Logo',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

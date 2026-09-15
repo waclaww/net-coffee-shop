@@ -1,14 +1,35 @@
 .navbar {
-    position: relative;
+    position: sticky;
     display: flex;
     flex: 1;
     background-color: var( --surface ); 
+    margin-top: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
     border: 1px;
     border-radius: var( --rounded-full);
     height: 6.5vh;
+    width: 100vw;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3)
+}
+
+.title {
+    position: relative;
+    font-size: 1.75rem;
+    padding-left: 2vw;
+    font-family: 'Logo', sans-serif;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+.title:hover {
+    color: var(--accent-hover);
+}
+
+.titleContainer {
+    height: 3vh;
 }
 
 
@@ -17,7 +38,8 @@
     display: flex;
     flex: 1;
     border-radius: var( --rounded-full);
-    justify-content: space-between;
+    background-color: var(--surface);
+    margin-left: 2vw;
     align-items: center;
     flex-direction: row;
 }
@@ -25,27 +47,46 @@
 
 .element {
     position: relative;
-    display: flex;
-    margin-left: 5vw;
-    padding-right: 5vw;
     white-space: nowrap;
+    margin-left: 3vw;
+    font-size: 1.1rem;
+}
+
+.element:hover {
+    transform: scale(0.99) translateY(1px);
 }
 
 .search {
+    display: flex;
     flex: 1;
+    margin-right: 3vw;
+    align-items: center;
+    flex-direction: row;
 }
 
-input {
-    flex: 1;
-    position: relative;
-    width: 25vw;
-    height: 3vh;
+.magnifier {
+    position: fixed;
+    display: flex;
+    margin-left: 24.5vw;
+    color: var(--accent);
+}
+
+.input {
+    display: flex;
+    margin-left: 3vw;
+    width: 20vw;
+    height: 3.5vh;
+    align-self: center;
+    border: 2.5px solid;
     border-radius: var( --rounded-full );
+    border-color: var(--accent);
+    transition: 0.3s ease;
     padding-left: 10px;
+    padding-right: 3vw;
 }
 
-input:focus {
-    border-color: #623d06;
+.input:focus {
+    border-color: var(--accent-hover);
     outline: none;
 }
 
@@ -53,7 +94,14 @@ input:focus {
     position: relative;
     display: flex;
     flex: 1;
-    margin-left: 18vw;
-    gap: 2vw;
+    justify-content: end;
+    margin-right: 2vw;
+    gap: 3vw;
     
 }
+
+.tool:hover {
+    transform: scale(0.99) translateY(1px);
+}
+
+
