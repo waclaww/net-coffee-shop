@@ -36,7 +36,7 @@ const ProductRepository = {
     },
     async isName(name) {
         const [rows] = await db.execute(
-            `SELECT * FROM Products WHERE name = ?`,
+            `SELECT 1 FROM Products WHERE name = ? LIMIT 1`,
             [name]
         )
         return rows.length > 0;

@@ -43,7 +43,7 @@ export function Login() {
             <div className={styles.centeredLayout}>
                 <div className={styles.container}>
                     <form onSubmit={handleSubmit}>
-                        <h3>Вход в аккаунт</h3>
+                        <h3 className={styles.h3}>Вход в аккаунт</h3>
 
                         {error && <div className={styles.errorMessage}>{error}</div>}
 
@@ -71,6 +71,7 @@ export function Login() {
                         <button
                             type="submit"
                             disabled={isSubmiting}
+                            className={styles.button}
                         >{isSubmiting ? 'Вход' : 'Войти'}</button>
                         <p>Нет акканта? <a href='/register'>Зарегестрируйтесь!</a></p>
                     </div>

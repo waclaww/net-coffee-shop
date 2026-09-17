@@ -1,5 +1,5 @@
 .navbar {
-    position: sticky;
+    position: fixed;
     display: flex;
     flex: 1;
     background-color: var( --surface ); 
@@ -9,11 +9,13 @@
     border: 1px;
     border-radius: var( --rounded-full);
     height: 6.5vh;
-    width: 100vw;
+    width: 98vw;
+    justify-self: center;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3)
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
 
 .title {
@@ -57,6 +59,7 @@
 }
 
 .search {
+    position: relative;
     display: flex;
     flex: 1;
     margin-right: 3vw;
@@ -65,7 +68,7 @@
 }
 
 .magnifier {
-    position: fixed;
+    position: absolute;
     display: flex;
     margin-left: 24.5vw;
     color: var(--accent);

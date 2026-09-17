@@ -43,7 +43,7 @@ export function Register() {
                 <div className={styles.centeredLayout}>
                     <div className={styles.container}>
                         <form onSubmit={handleSubmit}>
-                            <h3>Регистрация в магазине</h3>
+                            <h3 className={styles.h3}>Регистрация в магазине</h3>
         
                             {error && <div className={styles.errorMessage}>{error}</div>}
         
@@ -71,6 +71,7 @@ export function Register() {
                             <button
                                 type="submit"
                                 disabled={isSubmiting}
+                                className={styles.button}
                             >{isSubmiting ? 'Регистрация' : 'Зарегестрироваться'}</button>
                             <p>Есть аккаунт? <a href='/login'>Войдите!</a></p>
                         </div>

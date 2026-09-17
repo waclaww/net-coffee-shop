@@ -1,0 +1,74 @@
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--surface);
+    width: 250px;
+    height: 310px;
+    margin-left: 2vw; /*временоо */
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.preview {
+    margin-top: 5vh;
+    width: 245px;
+    height: 245px;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    left: 1vw;
+    bottom: 5vh;
+
+    font-weight: 500;
+}
+
+.priceContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    left: 1vw;
+    bottom: 7vh;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.inBasket {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    width: 230px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--accent);
+    border: none;
+    border-radius: var(--rounded-full);
+    bottom: 8vh;
+    left: 10px;
+    color: white;
+    font-size: medium;
+    transition: background-color 0.3s ease;
+}
+
+.inBasket:hover {
+    background-color: var(--accent-hover);
+}
+
+.inBasket:active {
+    transform: scale(0.99) translateY(0.5px);
+}
+
+.link {
+    transition: 0.3s ease;
+}
+
+.link:hover {
+    transform: scale(0.99) translateY(1px);
+}

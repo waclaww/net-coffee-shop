@@ -1,0 +1,45 @@
+# Зависимости
+node_modules/
+jspm_packages/
+
+# Сборка React (например, папка build или dist)
+/client/build/
+/client/dist/
+/dist/
+/build/
+
+# Логи
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Переменные окружения (секреты, пароли, порты)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Системные файлы и редакторы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Тестирование и покрытие
+coverage/
+.nyc_output/

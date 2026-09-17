@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.products {
+    position: relative;
+    margin-top: 9vh;
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+}
+
+.navbar {
+    margin: 10vw;
+}
