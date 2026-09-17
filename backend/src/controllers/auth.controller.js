@@ -7,6 +7,7 @@ class AuthController {
     async register (req, res) {
         try {
         const { username, password } = req.body;
+
         if (!username || !password) {
             return res.status(400).json({ message: "Username and password are required" });
         }
@@ -17,6 +18,7 @@ class AuthController {
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
+
         await UserRepository.addUser(username, hashedPassword);
         res.json({ message: "User registered" });
     } catch (error) {
@@ -27,14 +29,17 @@ class AuthController {
     async login (req, res) {
         try {
         const { username, password } = req.body;
+
         const user = await UserRepository.isUser(username);
         if (!user) return res.status(401).json({ message: "Invalid credentials" });
 
         const match = await bcrypt.compare(password, user.password);
         if (!match) return res.status(401).json({ message: "Invalid credentials" });
 
+        const role = await UserRepository.getRole(username);
+
         const token = jwt.sign(
-            { username },
+            { username, role },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );

@@ -2,6 +2,7 @@ const Router = require('express');
 const router = new Router();
 const ProductController = require('../controllers/product.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
+const adminMiddleware = require('../middlewares/admin.middleware')
 
 router.post('/add', ProductController.addProduct);
 router.get('/get-all', authMiddleware, ProductController.getProducts);
