@@ -1,5 +1,5 @@
 require("dotenv").config();
-const UserRepository = require('../repositories/userRepository');
+const UserRepository = require('../repositories/user.repository');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 

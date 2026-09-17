@@ -1,4 +1,4 @@
-const db = require('../../config/db');
+const db = require('../config/db');
 
 const UserRepository = {
     async addUser (username, hashedPassword) {
@@ -12,7 +12,6 @@ const UserRepository = {
         const [rows] = await db.execute('SELECT * FROM Users WHERE username = ?', [username]);
 
         if (rows.length === 0) return null;
-        console.log(rows[0]);
         return rows[0];
     },
 }
