@@ -1,6 +1,4 @@
 const ProductRepository = require('../repositories/product.repository');
-// const Product = require('../dto/product.dto');
-const UserRepository = require('../repositories/user.repository');
 
 class ProductController {
     async addProduct(req, res) {

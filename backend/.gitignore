@@ -43,3 +43,5 @@ Thumbs.db
 # Тестирование и покрытие
 coverage/
 .nyc_output/
+
+public
