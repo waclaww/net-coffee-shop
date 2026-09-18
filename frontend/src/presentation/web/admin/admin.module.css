@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--surface);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding-left: 1vw;
+}
+
+.goToSite {
+    display: flex;
+    margin-left: auto;
+    margin-right: 1vw;
+}

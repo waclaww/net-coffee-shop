@@ -17,7 +17,8 @@ export const AuthProvider = ({children}) => {
             }
             try {
                 const response = await api.get('/api/auth/me');
-                setUser(response.data);
+                console.log({"response": response.data.user})
+                setUser(response.data.user);
             } catch (error) {
                 console.log("Токен невалиден, очищаем сессию:", error.message);
                 localStorage.removeItem('token');
@@ -32,7 +33,7 @@ export const AuthProvider = ({children}) => {
     const login = async (credentials) => {
         try {
             const response = await api.post('/api/auth/login', credentials);
-            const { token, user: userData } = response.data;
+            const { token, user: userData,  } = response.data;
 
             localStorage.setItem('token', token);
             setUser(userData);

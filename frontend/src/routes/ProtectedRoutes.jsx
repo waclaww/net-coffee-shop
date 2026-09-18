@@ -1,7 +1,7 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 
-const ProtectedRoute = () => {
+const ProtectedRoute = ({ allowedRoles }) => {
     const { user, isLoading } = useAuth();
     const location = useLocation()
 
@@ -10,8 +10,16 @@ const ProtectedRoute = () => {
             <div>Загрузка...</div>
         );
     }
+    if (!user) {
+        return <Navigate to='/login' state = {{ from: location }}/>
+    }
 
-    return user ? <Outlet /> : <Navigate to='/login' state = {{ from: location}} replace/>
+    if ( !allowedRoles.includes(user.role)) {
+        return <Navigate to='/forbidden' state={{ from: location }}/>
+    }
+
+    return <Outlet />
 }
+
 
 export default ProtectedRoute;

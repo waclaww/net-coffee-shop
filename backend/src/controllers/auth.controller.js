@@ -39,20 +39,20 @@ class AuthController {
         const role = await UserRepository.getRole(username);
 
         const token = jwt.sign(
-            { username, role },
+            { username: username, role: role },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
 
-        res.json({ token, user: { username } });
+        res.json({ token, user: { username, role } });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Server error" });
     }
     }
     async me (req, res) {
-        res.json({
-        username: req.user.username,
+        const response = res.json({
+        user: req.user,
     });
     }
 }
