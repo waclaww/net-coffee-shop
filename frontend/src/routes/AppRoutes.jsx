@@ -3,8 +3,10 @@ import ProtectedRoute from './ProtectedRoutes';
 import { Login } from '../presentation/web/auth/login';
 import { Register } from '../presentation/web/auth/register'
 import { Home } from '../presentation/web/home/home';
-import { Admin } from '../presentation/web/admin';
+import { Admin } from '../presentation/web/admin/admin';
 import { Forbidden } from '../presentation/web/errors/forbidden';
+import { Products } from '../presentation/web/admin/products';
+import { AddProduct } from '../presentation/web/admin/products/add/addProduct'
 
 const AppRoutes = () => {
     return (
@@ -18,6 +20,8 @@ const AppRoutes = () => {
             </Route>
             <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
                 <Route path="/admin" element={<Admin />}/> 
+                <Route path="/admin/products" element={<Products/>}></Route>
+                <Route path="/admin/products/add" element={<AddProduct/>}></Route>
             </Route>
         </Routes>
     )

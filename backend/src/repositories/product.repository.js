@@ -22,7 +22,15 @@ const ProductRepository = {
     },
     async getProducts() {
         const [rows] = await db.execute(
-            `SELECT * FROM Products`,
+            `SELECT
+            p.id, 
+            p.name, 
+            p.type, 
+            p.description, 
+            p.price, 
+            f.path AS preview 
+            FROM products p 
+            LEFT JOIN files f ON p.preview = f.id`,
         );
         return rows;
     },

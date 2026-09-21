@@ -14,6 +14,7 @@ class StaticController {
             await StaticRepository.addFile(path);
 
             const id = await StaticRepository.getId(path);
+            console.log("/send file success")
             res.status(200).json({
                 message: "Файл успешно отправлен и сохранён",
                 file: id

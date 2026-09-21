@@ -15,7 +15,7 @@ export function ProductCard({product}) {
 
     return (
         <a href={link} className={styles.link}><div className={styles.card}>
-            <img src={`http://localhost:3000${preview}`} className={styles.preview}></img>
+            <img src={preview} className={styles.preview}></img>
             <p className={styles.title}>{name}</p>
             <div className={styles.priceContainer}>
                 <p className={styles.price}>{price}</p><BynIcon width={15} height={15} stroke-></BynIcon>
