@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import api from "../api/axiosInstance";
+import { User } from '../dto'
 
 export const AuthContext = createContext(null);
 
@@ -17,8 +18,7 @@ export const AuthProvider = ({children}) => {
             }
             try {
                 const response = await api.get('/api/auth/me');
-                console.log({"response": response.data.user})
-                setUser(response.data.user);
+                setUser(User.fromDto(response.data.user));
             } catch (error) {
                 console.log("Токен невалиден, очищаем сессию:", error.message);
                 localStorage.removeItem('token');
@@ -36,7 +36,7 @@ export const AuthProvider = ({children}) => {
             const { token, user: userData,  } = response.data;
 
             localStorage.setItem('token', token);
-            setUser(userData);
+            setUser(new User(response.data.user));
             return true;
         } catch (error) {
             console.log("Ошибка входа:", error);

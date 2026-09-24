@@ -62,8 +62,9 @@ class AuthController {
     }
     }
     async me (req, res) {
+        console.log(req.user)
         res.json({
-            user: req.user,
+            user: User.fromDto(req.user).toDto(),
         });
     }
 }

@@ -5,7 +5,7 @@ export class Product {
         type,
         description,
         price,
-        preview,
+        preview = {}
     ) {
         this.id = id;
         this.name = name;

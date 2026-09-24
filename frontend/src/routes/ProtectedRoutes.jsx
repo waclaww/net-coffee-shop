@@ -1,9 +1,12 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { User } from '../dto'
 
 const ProtectedRoute = ({ allowedRoles }) => {
     const { user, isLoading } = useAuth();
     const location = useLocation()
+
+    console.log("user", user)
 
 
     if (isLoading) {
