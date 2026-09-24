@@ -9,8 +9,6 @@ class StaticController {
             }
             // public/images/256662232.png
 
-            const path = `http://localhost:3000/static/${req.file.path.split('/').at(2)}`
-
             await StaticRepository.addFile(path);
 
             const id = await StaticRepository.getId(path);
