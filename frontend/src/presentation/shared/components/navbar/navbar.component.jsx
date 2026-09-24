@@ -4,7 +4,7 @@ import {ShoppingCart, Person, Sun, Magnifier} from '@gravity-ui/icons';
 export function Navbar () {
     return (
         <nav className={styles.navbar}>
-        <div class="nav-logo">
+        <div className="nav-logo">
             <a href="/" className={styles.title}>Net Coffee Shop</a>
         </div>
         <div className={styles.sections}>

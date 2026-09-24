@@ -23,7 +23,7 @@ export function Login() {
         setIsSubmiting(true);
 
         try {
-            await login({ username, password });
+            await login({ name: username, password: password });
             navigate(fromPage, { replace: true });
         } catch (error) {
             const serverMessage = error.response?.data?.message;

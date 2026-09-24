@@ -2,8 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const path = require('path')
 const cors = require('cors');
-const multer = require('multer');
-const storageConfig = require('./src/config/multer');
 const apiRouter = require('./src/routes/index');
 
 
@@ -22,4 +20,4 @@ app.use('/static', express.static(path.join(__dirname, 'public/images')))
 app.use('/api', apiRouter)
 
 
-app.listen(3000)
+app.listen(process.env.PORT)

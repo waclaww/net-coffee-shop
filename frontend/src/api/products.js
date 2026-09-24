@@ -12,6 +12,7 @@ export const addFile = async (file) => {
 
     const response = await api.post(
         '/api/file/send',
+
         formData, 
         {
             headers: {'Content-Type': 'multipart/form-data'}

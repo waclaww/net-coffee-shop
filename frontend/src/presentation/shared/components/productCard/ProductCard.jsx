@@ -18,7 +18,7 @@ export function ProductCard({product}) {
             <img src={preview} className={styles.preview}></img>
             <p className={styles.title}>{name}</p>
             <div className={styles.priceContainer}>
-                <p className={styles.price}>{price}</p><BynIcon width={15} height={15} stroke-></BynIcon>
+                <p className={styles.price}>{price}</p><BynIcon width={15} height={15}></BynIcon>
             </div>
             <button className={styles.inBasket}>В корзину</button>
         </div></a>

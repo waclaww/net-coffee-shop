@@ -3,20 +3,19 @@ const db = require('../config/db');
 
 
 const ProductRepository = {
-    async addProduct(ProductData) {
-        const {
-            name = null,
-            type = null,
-            description = null,
-            price = null,
-            preview = null,
-        } = ProductData;
+    async addProduct(Product) {
 
         const [result] = await db.execute(
             `INSERT INTO Products (
             name, type, description, price, preview)
             VALUES (?, ?, ?, ?, ?)`,
-            [name, type, description, price, preview]
+            [
+                Product.name,
+                Product.type, 
+                Product.description, 
+                Product.price, 
+                Product.preview
+            ]
         );
         return result.insertId;
     },
@@ -34,18 +33,18 @@ const ProductRepository = {
         );
         return rows;
     },
-    async getOneProduct(id) {
+    async getOneProduct(Product) {
         const [rows] = await db.execute(
             'SELECT * FROM Products WHERE id = ?',
-            [id]
+            [Product.id]
         );
         if (rows.length === 0) return null;
         return rows[0];
     },
-    async isName(name) {
+    async isName(Product) {
         const [rows] = await db.execute(
             `SELECT 1 FROM Products WHERE name = ? LIMIT 1`,
-            [name]
+            [Product.name]
         )
         return rows.length > 0;
     }

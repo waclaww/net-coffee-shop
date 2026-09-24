@@ -9,7 +9,7 @@ export function Register() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [ username, setUsername ] = useState('');
+    const [ name, setName ] = useState('');
     const [ password, setPassword ] = useState('');
 
     const [ isSubmiting, setIsSubmiting ] = useState(false);
@@ -23,7 +23,7 @@ export function Register() {
         setIsSubmiting(true);
 
         try {
-            await register({ username, password });
+            await register({ name, password });
             navigate(fromPage, { replace: true });
         } catch (error) {
             const serverMessage = error.response?.data?.message;
@@ -52,8 +52,8 @@ export function Register() {
                                 <input
                                 className={styles.textInput}
                                 type='text'
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                                 required
                                 disabled={isSubmiting}
         

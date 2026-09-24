@@ -1,26 +1,31 @@
 const db = require('../config/db');
 
 const UserRepository = {
-    async addUser (username, hashedPassword) {
+    async addUser (user) {
         const [result] = await db.execute(
-            'INSERT INTO Users (username, password, role) VALUES (?, ?, ?)',
-            [username, hashedPassword, 'user']
+            `INSERT INTO Users 
+            (name, password, role) 
+            VALUES (?, ?, ?)`,
+            [user.name, user.password, 'user']
         );
         return (result.insertId);
     },
-    async isUser(username) {
-        const [rows] = await db.execute('SELECT * FROM Users WHERE username = ?', [username]);
+    async isUser(user) {
+        const [rows] = await db.execute(
+            'SELECT * FROM Users WHERE name = ?', 
+            [user.name]
+        );
 
         if (rows.length === 0) return null;
         return rows[0];
     },
-    async getRole(username) {
+    async getRole(user) {
         const [rows] = await db.execute(
-            "SELECT role FROM users WHERE username = ?",
-            [username]
+            "SELECT role FROM users WHERE name = ?",
+            [user.name]
         )       
         return rows[0]?.role || null;
     }
 }
 
-module.exports = UserRepository;
+module.exports = UserRepository ;
